@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Book - <%= book.title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="form-container">
+      <h1 class="form-title">Edit Book</h1>
+
+      <form action="/books/edit/<%= book.id %>" method="POST">
+        <!-- Title -->
+        <div class="form-group">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title"
+                 value="<%= book.title %>" required>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" id="description" name="description"
+                    rows="4"><%= book.description %></textarea>
+        </div>
+
+        <!-- Price and Stock -->
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="price" class="form-label">Price (Rp)</label>
+            <input type="number" class="form-control" id="price" name="price"
+                   value="<%= book.price %>" min="0" required>
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock"
+                   value="<%= book.stock %>" min="0" required>
+          </div>
+        </div>
+
+        <!-- Cover URL -->
+        <div class="form-group">
+          <label for="coverUrl" class="form-label">Cover Image URL</label>
+          <input type="url" class="form-control" id="coverUrl" name="coverUrl"
+                 value="<%= book.coverUrl %>">
+          <% if (book.coverUrl) { %>
+            <div class="mt-2">
+              <small>Current Cover:</small><br>
+              <img src="<%= book.coverUrl %>" alt="Current cover" style="max-height: 100px; margin-top: 5px;">
+            </div>
+          <% } %>
+        </div>
+
+        <!-- Category -->
+        <div class="form-group">
+          <label for="CategoryId" class="form-label">Category</label>
+          <select class="form-select" id="CategoryId" name="CategoryId" required>
+            <% categories.forEach(c => { %>
+              <option value="<%= c.id %>" <%= c.id === book.CategoryId ? "selected" : "" %>>
+                <%= c.name %>
+              </option>
+            <% }) %>
+          </select>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between mt-4">
+          <a href="/books" class="btn btn-outline-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary">Update Book</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

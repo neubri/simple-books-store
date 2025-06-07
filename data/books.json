@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Atomic Habits",
+    "description": "Buku tentang kebiasaan kecil yang menghasilkan perubahan besar.",
+    "price": 150000,
+    "stock": 10,
+    "coverUrl": "https://example.com/atomic.jpg",
+    "CategoryId": 1
+  },
+  {
+    "title": "Clean Code",
+    "description": "Buku tentang praktik coding bersih dan maintainable.",
+    "price": 200000,
+    "stock": 5,
+    "coverUrl": "https://example.com/cleancode.jpg",
+    "CategoryId": 2
+  },
+  {
+    "title": "The Republic",
+    "description": "Dialog filosofis karya Plato.",
+    "price": 175000,
+    "stock": 3,
+    "coverUrl": "https://example.com/republic.jpg",
+    "CategoryId": 3
+  }
+]
