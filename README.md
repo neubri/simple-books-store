@@ -5,7 +5,7 @@ A simple web application for managing books, categories, users, and invoices. Bu
 ## Features
 
 - User registration & login
-- CRUD books & categories
+- CRUD for books & categories
 - Book purchase & invoice generation
 - Data stored in PostgreSQL via Sequelize ORM
 
@@ -13,7 +13,7 @@ A simple web application for managing books, categories, users, and invoices. Bu
 
 ```
 app.js                # Main application file
-config/               # Database config
+config/               # Database configuration
 controllers/          # Route controllers
 models/               # Sequelize models
 routes/               # Express routes
@@ -34,9 +34,9 @@ helpers/              # Utility functions
    ```bash
    npm install
    ```
-3. **Configure database**
+3. **Configure the database**
    - Edit `config/config.json` with your PostgreSQL credentials.
-   - Create the database manually or via Sequelize CLI.
+   - Create the database manually or using Sequelize CLI.
 4. **Run migrations & seeders**
    ```bash
    npx sequelize-cli db:create
@@ -46,17 +46,17 @@ helpers/              # Utility functions
 5. **Start the application**
    ```bash
    npm start
-   # atau
+   # or
    node app.js
    ```
 6. **Access the app**
-   - Buka browser dan akses `http://localhost:3000`
+   - Open your browser and go to `http://localhost:3000`
 
 ## Usage
 
-- Register/login sebagai user
-- Tambahkan, edit, atau hapus buku dan kategori
-- Lakukan pembelian buku dan lihat invoice
+- Register/login as a user
+- Add, edit, or delete books and categories
+- Purchase books and view invoices
 
 ## Dependencies
 
