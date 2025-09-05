@@ -68,10 +68,6 @@ helpers/              # Utility functions
 - express-session
 - easyinvoice
 
-## Author
-
-- Neubri Hidayah
-
 ## License
 
 MIT
